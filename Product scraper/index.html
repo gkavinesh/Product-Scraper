@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucks</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Preloader styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hide preloader after content loads */
+        body.loaded .preloader {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="brand-icon">🔗</span>
+                <span>Bucks</span>
+            </div>
+            <div class="user-actions">
+                <a href="#" class="icon-link">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-cog"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <p class="tagline">Elevate Your Data Strategy:</p>
+                <h1>Unlock the Power of <span class="highlight">Bucks</span></h1>
+                <p class="description">
+                    Bucks is your all-in-one web scraping and benchmarking platform. Extract valuable insights, compare
+                    product data, and analyze performance benchmarks to stay ahead in the game.
+                </p>
+                <div id="wrap">
+                    <form action="results.html" method="get" autocomplete="on">
+                        <input id="search" name="query" type="text" placeholder="Search for products...">
+                        <button id="search_submit" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero.jpg" alt="Data Visualization" />
+            </div>
+        </section>
+
+        <section class="trending-section">
+            <h2>Trending Electronics</h2>
+            <br>
+            <div id="trending-products" class="trending-products-grid">
+                <!-- Products will be dynamically injected here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Bucks</p>
+    </footer>
+
+    <script>
+        // Preloader logic
+        document.addEventListener("DOMContentLoaded", () => {
+            // Simulate loading delay for demonstration purposes
+            setTimeout(() => {
+                document.body.classList.add("loaded");
+            }, 2000); // Replace 2000ms with actual loading time if required
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
+
