@@ -256,7 +256,6 @@ form:valid button {
   display: flex;
   justify-content: flex-start; /* Align to the left */
   margin-top: 10px;
-  padding-left: 20px; /* Optional padding to create space from the edge */
 }
 
 /* Container for the search bar */
