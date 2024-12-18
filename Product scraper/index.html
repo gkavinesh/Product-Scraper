@@ -7,6 +7,7 @@
     <title>Bucks</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <style>
         /* Preloader styles */
         .preloader {
@@ -82,12 +83,13 @@
                     Bucks is your all-in-one web scraping and benchmarking platform. Extract valuable insights, compare
                     product data, and analyze performance benchmarks to stay ahead in the game.
                 </p>
-                <div id="wrap">
-                    <form action="results.html" method="get" autocomplete="on">
-                        <input id="search" name="query" type="text" placeholder="Search for products...">
-                        <button id="search_submit" type="submit">Search</button>
+                    <form action="results.html" method="get" autocomplete="on" class="custom-search-form">
+                        <div class="custom-search-bar">
+                            <i class="fa fa-search search-icon"></i>
+                            <input type="search" name="query" class="search-bar-new" placeholder="Search here..." />
+                        </div>
                     </form>
-                </div>
+                
             </div>
             <div class="hero-image">
                 <img src="hero.jpg" alt="Data Visualization" />
@@ -110,14 +112,20 @@
     <script>
         // Preloader logic
         document.addEventListener("DOMContentLoaded", () => {
-            // Simulate loading delay for demonstration purposes
             setTimeout(() => {
                 document.body.classList.add("loaded");
-            }, 2000); // Replace 2000ms with actual loading time if required
+            }, 2000); // Simulate loading delay
         });
+
+        function clearInput() {
+    const searchInput = document.querySelector('input[type="search"]');
+    searchInput.value = '';
+    searchInput.focus();
+}
     </script>
     <script src="app.js"></script>
 </body>
 
 </html>
+
 

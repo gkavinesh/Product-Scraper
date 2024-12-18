@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchTrendingProducts() {
       if (!trendingProductsDiv) return; // Check if the element exists
       const apiHost = "real-time-product-search.p.rapidapi.com";
-      const apiKey = "2584577010msh77a82e7bba98997p12d905jsn5157fdba8a09";
+      const apiKey = "b1b5b0c5aamsh2ffa08b2c0bfd75p1001b6jsn7954d2a329b5";
       const query = "electronics";
       const country = "us";
 
